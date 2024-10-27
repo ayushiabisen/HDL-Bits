@@ -1,10 +1,10 @@
 module top_module (
-    input clk,
     input d,
+    input ena,
     output reg q
 );
 
-always @(posedge clk)
-    q <= d;
+always @(*)
+    q <= ena ? d : q;
 
 endmodule

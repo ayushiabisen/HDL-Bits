@@ -1,10 +1,10 @@
 module top_module (
     input clk,
-    input d,
-    output reg q
+    input w, R, E, L,
+    output reg Q
 );
 
 always @(posedge clk)
-    q <= d;
+    Q <= L ? R : (E ? w : Q);
 
 endmodule
